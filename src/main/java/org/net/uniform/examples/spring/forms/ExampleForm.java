@@ -47,6 +47,11 @@ public class ExampleForm extends UIkitForm {
                 
                 return null;
             }
+
+            @Override
+            public boolean breakChainOnError() {
+                return false;
+            }
         });
         this.addElement(input);
 
