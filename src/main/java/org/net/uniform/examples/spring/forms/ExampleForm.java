@@ -3,7 +3,6 @@ package org.net.uniform.examples.spring.forms;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import org.net.uniform.api.Element;
 import org.net.uniform.api.Validator;
 import org.net.uniform.examples.spring.common.forms.UIkitForm;
 import org.net.uniform.html.decorators.HTMLTagDecorator;
