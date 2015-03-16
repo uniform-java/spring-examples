@@ -28,10 +28,9 @@ public class HomeController {
 
     private String doHome(Model model, MultiValueMap<String, String> formData, boolean isPost) {
         Form form = new ExampleForm();
-
+        
         if (isPost) {
-            Map<String, Object> data = adaptFormData(formData, form);
-            form.populate(data);
+            form.populate(formData);
 
             model.addAttribute("valid", form.isValid());
             
@@ -41,27 +40,5 @@ public class HomeController {
         model.addAttribute("form", form);
         
         return "home";
-    }
-
-    private Map<String, Object> adaptFormData(MultiValueMap<String, String> formData, Form form) {
-        Map<String, Object> data = new HashMap<>();
-
-        for (Element element : form.getElements().values()) {
-            Class type = element.getValueType();
-
-            if (type != null) {
-                String id = element.getId();
-                List<String> listValue = formData.get(id);
-                String firstValue = formData.getFirst(id);
-
-                if (type.equals(List.class)) {
-                    data.put(id, listValue);
-                } else {
-                    data.put(id, firstValue);
-                }
-            }
-        }
-
-        return data;
     }
 }

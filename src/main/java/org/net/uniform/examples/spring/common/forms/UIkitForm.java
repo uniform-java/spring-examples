@@ -4,7 +4,7 @@ package org.net.uniform.examples.spring.common.forms;
 
 import java.util.HashMap;
 import org.net.uniform.html.HTMLForm;
-import org.net.uniform.html.decorators.HTMLErrorsDecorator;
+import org.net.uniform.html.decorators.ElementErrorsDecorator;
 import org.net.uniform.html.decorators.HTMLTagDecorator;
 import org.net.uniform.html.decorators.LabelDecorator;
 
@@ -29,7 +29,7 @@ public class UIkitForm extends HTMLForm {
             }
         }));
         defaultGlobalDecorators.add(new LabelDecorator("uk-form-label"));
-        defaultGlobalDecorators.add(new HTMLErrorsDecorator("uk-text-danger"));
+        defaultGlobalDecorators.add(new ElementErrorsDecorator("uk-text-danger"));
         defaultGlobalDecorators.add(new HTMLTagDecorator("div", new HashMap<String, Object>() {
             {
                 put("class", "uk-form-row");

@@ -11,6 +11,7 @@ import org.net.uniform.html.elements.HTMLElement;
 import org.net.uniform.html.elements.Input;
 import org.net.uniform.html.elements.Multiselect;
 import org.net.uniform.html.elements.Select;
+import org.net.uniform.impl.utils.UniformUtils;
 
 /**
  *
@@ -26,7 +27,15 @@ public class ExampleForm extends UIkitForm {
         header.setProperty("class", "header-class");
         header.setContent("<i class=\"uk-icon-cog\"></i> Submit me please");
         this.addElement(header);
+        
+        this.startDecorator("uno", new HTMLTagDecorator("div", new HashMap<String, Object>(){{
+            put("class", "uk-grid");
+        }}));
 
+        this.startDecorator("dos", new HTMLTagDecorator("div", new HashMap<String, Object>(){{
+            put("class", "uk-width-1-2");
+        }}));
+        
         //Input
         Input input = new Input("input");
         input.setLabel("Field 1");
@@ -34,16 +43,18 @@ public class ExampleForm extends UIkitForm {
         input.addClass("class2");
         input.setProperty("placeholder", "Input something...");
         input.setRequired(true);
-        input.addValidator(new Validator<Input, String>() {
+        input.addValidator(new Validator<Input>() {
 
             @Override
-            public List<String> getValidationErrors(Input e, String value) {
-                if(!value.contains("ok")){
+            public List<String> getValidationErrors(Input e, List<String> value) {
+                String text = UniformUtils.firstValue(value);
+                
+                if(text == null || !text.contains("ok")){
                     return new ArrayList<String>(){{
                         add("The value needs to contain 'ok'");
                     }};
                 }
-                
+
                 return null;
             }
 
@@ -53,6 +64,7 @@ public class ExampleForm extends UIkitForm {
             }
         });
         this.addElement(input);
+        
 
         //Multiselect
         Multiselect multi = new Multiselect("multi");
@@ -67,6 +79,12 @@ public class ExampleForm extends UIkitForm {
         multi.setRequired(true);
 
         this.addElement(multi);
+        
+        this.endDecorator();//End column 1
+        
+        this.startDecorator("tres", new HTMLTagDecorator("div", new HashMap<String, Object>(){{
+            put("class", "uk-width-1-2");
+        }}));
 
         //Select
         Select select = new Select("select");
@@ -76,10 +94,13 @@ public class ExampleForm extends UIkitForm {
         select.addOption("b", "Two");
         select.addOption("c", "Three");
         select.setValue("a");
-        select.setRequired(true);
 
         this.addElement(select);
-
+        
+        this.endDecorator();//End Column 2
+        
+        this.endDecorator();//End grid
+        
         Button submit = new Button("submit", Button.BUTTON_TYPE_SUBMIT);
         submit.addClass("uk-button uk-button-primary");
         submit.setProperty("escape", "false");
