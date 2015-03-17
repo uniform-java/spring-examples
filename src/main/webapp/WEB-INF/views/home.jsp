@@ -6,10 +6,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="<c:url value="/assets/vendor/uikit/css/uikit.gradient.min.css"/>" rel="stylesheet">
+        <link href="<c:url value="/assets/vendor/uikit/css/components/form-select.gradient.min.css"/>" rel="stylesheet">
+        <link href="<c:url value="/assets/vendor/uikit/css/components/datepicker.gradient.min.css"/>" rel="stylesheet">
         <link href="<c:url value="/assets/css/style.css"/>" rel="stylesheet">
         
         <script src="<c:url value="/assets/vendor/jquery/jquery-1.11.2.min.js"/>"></script>
         <script src="<c:url value="/assets/vendor/uikit/js/uikit.min.js"/>"></script>
+        <script src="<c:url value="/assets/vendor/uikit/js/components/form-select.min.js"/>"></script>
+        <script src="<c:url value="/assets/vendor/uikit/js/components/datepicker.min.js"/>"></script>
         <title>Home</title>
     </head>
     <body class="uk-height-1-1 uk-margin-left uk-margin-right">

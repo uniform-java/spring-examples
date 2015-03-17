@@ -2,12 +2,14 @@ package org.net.uniform.examples.spring.forms;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import org.net.uniform.api.Validator;
 import org.net.uniform.examples.spring.common.forms.UIkitForm;
 import org.net.uniform.html.decorators.HTMLTagDecorator;
 import org.net.uniform.html.elements.Button;
+import org.net.uniform.html.elements.DatePicker;
 import org.net.uniform.html.elements.HTMLElement;
 import org.net.uniform.html.elements.Input;
 import org.net.uniform.html.elements.Multiselect;
@@ -85,6 +87,11 @@ public class ExampleForm extends UIkitForm {
         this.startDecorator("col2", new HTMLTagDecorator("div", new HashMap<String, Object>(){{
             put("class", "uk-width-1-2");
         }}));
+        
+        DatePicker datePicker = new DatePicker("date");
+        datePicker.setLabel("Some date (optional)");
+        datePicker.setValue(new Date());
+        this.addElement(datePicker);
 
         //Select
         Select select = new Select("select");

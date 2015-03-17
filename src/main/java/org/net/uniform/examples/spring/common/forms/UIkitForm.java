@@ -7,6 +7,7 @@ import org.net.uniform.html.HTMLForm;
 import org.net.uniform.html.decorators.ElementErrorsDecorator;
 import org.net.uniform.html.decorators.HTMLTagDecorator;
 import org.net.uniform.html.decorators.LabelDecorator;
+import org.net.uniform.html.elements.DatePicker;
 
 /**
  *
@@ -17,6 +18,12 @@ public class UIkitForm extends HTMLForm {
     public UIkitForm() {
         super();
         this.addClass("uk-form");
+    }
+
+    @Override
+    protected void setupDefaultRenderers() {
+        super.setupDefaultRenderers();
+        this.defaultRenderers.put(DatePicker.class, new UIkitDatepickerRenderer());
     }
 
     @Override
