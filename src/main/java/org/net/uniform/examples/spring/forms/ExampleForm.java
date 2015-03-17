@@ -1,6 +1,7 @@
 package org.net.uniform.examples.spring.forms;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import org.net.uniform.api.Validator;
@@ -11,6 +12,7 @@ import org.net.uniform.html.elements.HTMLElement;
 import org.net.uniform.html.elements.Input;
 import org.net.uniform.html.elements.Multiselect;
 import org.net.uniform.html.elements.Select;
+import org.net.uniform.html.elements.Textarea;
 import org.net.uniform.impl.utils.UniformUtils;
 
 /**
@@ -28,11 +30,13 @@ public class ExampleForm extends UIkitForm {
         header.setContent("<i class=\"uk-icon-cog\"></i> Submit me please");
         this.addElement(header);
         
-        this.startDecorator("uno", new HTMLTagDecorator("div", new HashMap<String, Object>(){{
+        //Start grid
+        this.startDecorator("grid", new HTMLTagDecorator("div", new HashMap<String, Object>(){{
             put("class", "uk-grid");
         }}));
 
-        this.startDecorator("dos", new HTMLTagDecorator("div", new HashMap<String, Object>(){{
+        //Start column 1
+        this.startDecorator("col1", new HTMLTagDecorator("div", new HashMap<String, Object>(){{
             put("class", "uk-width-1-2");
         }}));
         
@@ -50,9 +54,7 @@ public class ExampleForm extends UIkitForm {
                 String text = UniformUtils.firstValue(value);
                 
                 if(text == null || !text.contains("ok")){
-                    return new ArrayList<String>(){{
-                        add("The value needs to contain 'ok'");
-                    }};
+                    return Arrays.asList("The value needs to contain 'ok'");
                 }
 
                 return null;
@@ -72,17 +74,15 @@ public class ExampleForm extends UIkitForm {
         multi.addOption("1", "One");
         multi.addOption("2", "Two");
         multi.addOption("3", "Three");
-        multi.setValue(new ArrayList<String>(){{
-            add("1");
-            add("3");
-        }});
+        multi.setValue(Arrays.asList("1", "3"));
         multi.setRequired(true);
 
         this.addElement(multi);
         
         this.endDecorator();//End column 1
         
-        this.startDecorator("tres", new HTMLTagDecorator("div", new HashMap<String, Object>(){{
+        //Start column 2
+        this.startDecorator("col2", new HTMLTagDecorator("div", new HashMap<String, Object>(){{
             put("class", "uk-width-1-2");
         }}));
 
@@ -96,6 +96,12 @@ public class ExampleForm extends UIkitForm {
         select.setValue("a");
 
         this.addElement(select);
+        
+        Textarea textarea = new Textarea("txt");
+        textarea.setLabel("Field 4");
+        textarea.setProperty("placeholder", "Input something...");
+                
+        this.addElement(textarea);
         
         this.endDecorator();//End Column 2
         
