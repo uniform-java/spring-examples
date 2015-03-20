@@ -18,7 +18,7 @@ public class UIkitErrorsDecorator extends AbstractSingleElementDecorator {
 
     @Override
     protected List<SimpleHTMLTag> render(Element element, List<SimpleHTMLTag> rendered) {
-        if (element.validationPerformed() && !element.getValidationErrors().isEmpty()) {
+        if (rendered.size() == 1 && element.validationPerformed() && !element.getValidationErrors().isEmpty()) {
             String currentClass = rendered.get(0).getProperty("class");
             if (currentClass == null) {
                 currentClass = "";

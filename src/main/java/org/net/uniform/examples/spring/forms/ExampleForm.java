@@ -1,6 +1,5 @@
 package org.net.uniform.examples.spring.forms;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -13,6 +12,7 @@ import org.net.uniform.html.elements.DatePicker;
 import org.net.uniform.html.elements.HTMLElement;
 import org.net.uniform.html.elements.Input;
 import org.net.uniform.html.elements.Multiselect;
+import org.net.uniform.html.elements.Radio;
 import org.net.uniform.html.elements.Select;
 import org.net.uniform.html.elements.Textarea;
 import org.net.uniform.impl.utils.UniformUtils;
@@ -80,6 +80,16 @@ public class ExampleForm extends UIkitForm {
         multi.setRequired(true);
 
         this.addElement(multi);
+        
+        //Select
+        Radio radio = new Radio("radio");
+        radio.setLabel("Radio");
+        radio.addOption("a", "One");
+        radio.addOption("b", "Two");
+        radio.addOption("c", "Three");
+        radio.setRequired(true);
+        
+        this.addElement(radio);
         
         this.endDecorator();//End column 1
         

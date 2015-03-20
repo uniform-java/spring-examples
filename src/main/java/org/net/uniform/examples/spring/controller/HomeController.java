@@ -1,9 +1,5 @@
 package org.net.uniform.examples.spring.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import org.net.uniform.api.Element;
 import org.net.uniform.api.Form;
 import org.net.uniform.examples.spring.forms.ExampleForm;
 import org.springframework.stereotype.Controller;
@@ -30,6 +26,7 @@ public class HomeController {
         Form form = new ExampleForm();
         
         if (isPost) {
+            System.out.println(formData);
             form.populate(formData);
 
             model.addAttribute("valid", form.isValid());
