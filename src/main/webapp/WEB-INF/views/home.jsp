@@ -31,6 +31,13 @@
             <code>
                 <c:out value="${formData}"/> 
             </code>
+            
+            <div class="uk-text-bold">
+                Form data converted to target type:
+            </div>
+            <code>
+                <c:out value="${formDataConverted}"/> 
+            </code>
         </c:if>
     </body>
 </html>

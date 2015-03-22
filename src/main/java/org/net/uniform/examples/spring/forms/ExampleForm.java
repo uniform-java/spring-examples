@@ -8,9 +8,11 @@ import org.net.uniform.api.Validator;
 import org.net.uniform.examples.spring.common.forms.UIkitForm;
 import org.net.uniform.html.decorators.HTMLTagDecorator;
 import org.net.uniform.html.elements.Button;
+import org.net.uniform.html.elements.Checkbox;
 import org.net.uniform.html.elements.DatePicker;
 import org.net.uniform.html.elements.HTMLElement;
 import org.net.uniform.html.elements.Input;
+import org.net.uniform.html.elements.Multicheckbox;
 import org.net.uniform.html.elements.Multiselect;
 import org.net.uniform.html.elements.Radio;
 import org.net.uniform.html.elements.Select;
@@ -44,7 +46,7 @@ public class ExampleForm extends UIkitForm {
         
         //Input
         Input input = new Input("input");
-        input.setLabel("Field 1");
+        input.setLabel("Text input");
         input.setProperty("class", "class");
         input.addClass("class2");
         input.setProperty("placeholder", "Input something...");
@@ -69,10 +71,17 @@ public class ExampleForm extends UIkitForm {
         });
         this.addElement(input);
         
+        //Password
+         Input password = new Input("pass");
+        password.setLabel("Password");
+        password.setProperty("type", "password");
+        
+        this.addElement(password);
+        
 
         //Multiselect
-        Multiselect multi = new Multiselect("multi");
-        multi.setLabel("Field 2");
+        Multiselect multi = new Multiselect("multi-select");
+        multi.setLabel("Multiselect");
         multi.addOption("1", "One");
         multi.addOption("2", "Two");
         multi.addOption("3", "Three");
@@ -81,7 +90,7 @@ public class ExampleForm extends UIkitForm {
 
         this.addElement(multi);
         
-        //Select
+        //Radio
         Radio radio = new Radio("radio");
         radio.setLabel("Radio");
         radio.addOption("a", "One");
@@ -105,7 +114,7 @@ public class ExampleForm extends UIkitForm {
 
         //Select
         Select select = new Select("select");
-        select.setLabel("Field 3");
+        select.setLabel("Select");
         select.addOption("", "---");
         select.addOption("a", "One");
         select.addOption("b", "Two");
@@ -115,10 +124,25 @@ public class ExampleForm extends UIkitForm {
         this.addElement(select);
         
         Textarea textarea = new Textarea("txt");
-        textarea.setLabel("Field 4");
+        textarea.setLabel("Textarea");
         textarea.setProperty("placeholder", "Input something...");
                 
         this.addElement(textarea);
+        
+        //Checkbox
+        Checkbox chk = new Checkbox("check");
+        chk.setLabel("Checkbox");
+        this.addElement(chk);
+        
+        //Multi checkbox
+        Multicheckbox multiCheck = new Multicheckbox("check-multi");
+        multiCheck.setLabel("Multi-checkbox");
+        multiCheck.addOption("a", "One");
+        multiCheck.addOption("b", "Two");
+        multiCheck.addOption("c", "Three");
+        multiCheck.setRequired(true);
+        
+        this.addElement(multiCheck);
         
         this.endDecorator();//End Column 2
         
@@ -126,8 +150,8 @@ public class ExampleForm extends UIkitForm {
         
         Button submit = new Button("submit", Button.BUTTON_TYPE_SUBMIT);
         submit.addClass("uk-button uk-button-primary");
-        submit.setProperty("escape", "false");
-        submit.setLabel("Submit");
+        submit.setEscape(false);
+        submit.setLabel("<i class=\"uk-icon-check\"></i> Submit");
 
         submit.addDecorator(new HTMLTagDecorator("div", new HashMap<String, Object>() {
             {
