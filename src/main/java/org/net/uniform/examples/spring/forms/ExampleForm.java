@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import org.net.uniform.api.Option;
+import org.net.uniform.api.OptionGroup;
 import org.net.uniform.api.Validator;
 import org.net.uniform.examples.spring.common.forms.UIkitForm;
 import org.net.uniform.html.decorators.HTMLTagDecorator;
@@ -86,6 +88,16 @@ public class ExampleForm extends UIkitForm {
         multi.addOption("2", "Two");
         multi.addOption("3", "Three");
         multi.setValue(Arrays.asList("1", "3"));
+        multi.addOptionGroup(
+                new OptionGroup("g1", "Others")
+                    .addOption(new Option("4", "Four"))
+                    .addOption(new Option("5", "Five"))
+                    .addOption(new Option("no", "Disabled", false))
+        );
+        multi.addOptionGroup(
+                new OptionGroup("g2", "More")
+                    .addOption(new Option("6", "Six"))
+        );
         multi.setRequired(true);
 
         this.addElement(multi);
@@ -119,6 +131,12 @@ public class ExampleForm extends UIkitForm {
         select.addOption("a", "One");
         select.addOption("b", "Two");
         select.addOption("c", "Three");
+        select.addOptionGroup(
+                new OptionGroup("g1", "Others")
+                    .addOption(new Option("d", "Four"))
+                    .addOption(new Option("e", "Five"))
+                    .addOption(new Option("f", "Disabled", false))
+        );
         select.setValue("a");
 
         this.addElement(select);
