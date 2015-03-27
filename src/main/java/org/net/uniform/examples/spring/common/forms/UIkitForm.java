@@ -3,6 +3,7 @@ package org.net.uniform.examples.spring.common.forms;
 
 
 import java.util.HashMap;
+import org.net.uniform.api.Element;
 import org.net.uniform.html.HTMLForm;
 import org.net.uniform.html.decorators.ElementErrorsDecorator;
 import org.net.uniform.html.decorators.HTMLTagDecorator;
@@ -28,16 +29,16 @@ public class UIkitForm extends HTMLForm {
 
     @Override
     protected void setupDefaultDecorators() {
-        defaultGlobalDecorators.add(new UIkitErrorsDecorator());
+        addDefaultDecoratorForElementClass(Element.class, new UIkitErrorsDecorator());
 
-        defaultGlobalDecorators.add(new HTMLTagDecorator("div", new HashMap<String, Object>() {
+        addDefaultDecoratorForElementClass(Element.class, new HTMLTagDecorator("div", new HashMap<String, Object>() {
             {
                 put("class", "uk-form-controls");
             }
         }));
-        defaultGlobalDecorators.add(new LabelDecorator("uk-form-label"));
-        defaultGlobalDecorators.add(new ElementErrorsDecorator("uk-text-danger"));
-        defaultGlobalDecorators.add(new HTMLTagDecorator("div", new HashMap<String, Object>() {
+        addDefaultDecoratorForElementClass(Element.class, new LabelDecorator("uk-form-label"));
+        addDefaultDecoratorForElementClass(Element.class, new ElementErrorsDecorator("uk-text-danger"));
+        addDefaultDecoratorForElementClass(Element.class, new HTMLTagDecorator("div", new HashMap<String, Object>() {
             {
                 put("class", "uk-form-row");
             }
