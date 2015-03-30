@@ -3,9 +3,9 @@ package org.net.uniform.examples.spring.common.forms;
 
 
 import java.util.List;
-import org.net.uniform.api.Element;
-import org.net.uniform.api.html.SimpleHTMLTag;
-import org.net.uniform.impl.AbstractSingleElementDecorator;
+import net.uniform.api.Element;
+import net.uniform.api.html.SimpleHTMLTag;
+import net.uniform.impl.AbstractSingleElementDecorator;
 
 /**
  *

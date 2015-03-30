@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.net.uniform.api.Renderer;
-import org.net.uniform.api.html.SimpleHTMLTag;
-import org.net.uniform.html.elements.DatePicker;
+import net.uniform.api.Renderer;
+import net.uniform.api.html.SimpleHTMLTag;
+import net.uniform.html.elements.DatePicker;
 
 /**
  *

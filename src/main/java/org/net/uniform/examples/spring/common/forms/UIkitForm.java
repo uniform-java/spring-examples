@@ -3,12 +3,12 @@ package org.net.uniform.examples.spring.common.forms;
 
 
 import java.util.HashMap;
-import org.net.uniform.api.Element;
-import org.net.uniform.html.HTMLForm;
-import org.net.uniform.html.decorators.ElementErrorsDecorator;
-import org.net.uniform.html.decorators.HTMLTagDecorator;
-import org.net.uniform.html.decorators.LabelDecorator;
-import org.net.uniform.html.elements.DatePicker;
+import net.uniform.api.Element;
+import net.uniform.html.HTMLForm;
+import net.uniform.html.decorators.ElementErrorsDecorator;
+import net.uniform.html.decorators.HTMLTagDecorator;
+import net.uniform.html.decorators.LabelDecorator;
+import net.uniform.html.elements.DatePicker;
 
 /**
  *

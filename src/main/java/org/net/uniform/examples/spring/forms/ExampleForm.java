@@ -4,22 +4,22 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import org.net.uniform.api.Option;
-import org.net.uniform.api.OptionGroup;
-import org.net.uniform.api.Validator;
+import net.uniform.api.Option;
+import net.uniform.api.OptionGroup;
+import net.uniform.api.Validator;
+import net.uniform.html.decorators.HTMLTagDecorator;
+import net.uniform.html.elements.Button;
+import net.uniform.html.elements.Checkbox;
+import net.uniform.html.elements.DatePicker;
+import net.uniform.html.elements.HTMLElement;
+import net.uniform.html.elements.Input;
+import net.uniform.html.elements.Multicheckbox;
+import net.uniform.html.elements.Multiselect;
+import net.uniform.html.elements.Radio;
+import net.uniform.html.elements.Select;
+import net.uniform.html.elements.Textarea;
+import net.uniform.impl.utils.UniformUtils;
 import org.net.uniform.examples.spring.common.forms.UIkitForm;
-import org.net.uniform.html.decorators.HTMLTagDecorator;
-import org.net.uniform.html.elements.Button;
-import org.net.uniform.html.elements.Checkbox;
-import org.net.uniform.html.elements.DatePicker;
-import org.net.uniform.html.elements.HTMLElement;
-import org.net.uniform.html.elements.Input;
-import org.net.uniform.html.elements.Multicheckbox;
-import org.net.uniform.html.elements.Multiselect;
-import org.net.uniform.html.elements.Radio;
-import org.net.uniform.html.elements.Select;
-import org.net.uniform.html.elements.Textarea;
-import org.net.uniform.impl.utils.UniformUtils;
 
 /**
  *

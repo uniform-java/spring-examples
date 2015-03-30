@@ -1,6 +1,6 @@
 package org.net.uniform.examples.spring.controller;
 
-import org.net.uniform.api.Form;
+import net.uniform.api.Form;
 import org.net.uniform.examples.spring.forms.ExampleForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
