@@ -31,8 +31,11 @@ public class HomeController {
 
             model.addAttribute("valid", form.isValid());
             
+            
             model.addAttribute("formData", form.getFormData());
-            model.addAttribute("formDataConverted", form.getFormDataConvertedToElementValueTypes());
+            if(form.isValid()){
+                model.addAttribute("formDataConverted", form.getFormDataConvertedToElementValueTypes());
+            }
         }
 
         model.addAttribute("form", form);

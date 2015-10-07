@@ -32,12 +32,14 @@
                 <c:out value="${formData}"/> 
             </code>
             
-            <div class="uk-text-bold">
-                Form data converted to target type:
-            </div>
-            <code>
-                <c:out value="${formDataConverted}"/> 
-            </code>
+            <c:if test="${formDataConverted != null}">
+                <div class="uk-text-bold">
+                    Form data converted to target type:
+                </div>
+                <code>
+                    <c:out value="${formDataConverted}"/> 
+                </code>
+            </c:if>
         </c:if>
     </body>
 </html>
