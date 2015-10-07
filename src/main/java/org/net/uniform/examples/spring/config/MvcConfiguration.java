@@ -1,6 +1,7 @@
 package org.net.uniform.examples.spring.config;
 
 import java.util.Locale;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +19,9 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 public class MvcConfiguration extends WebMvcConfigurerAdapter {
 
+    @Autowired
+    private CommonConfigurationInterceptor commonInterceptor;
+    
     @Bean(name = "localeResolver")
     public SessionLocaleResolver sessionLocaleResolver() {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
@@ -31,7 +35,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
         langChange.setParamName("lang");
 
         registry.addInterceptor(langChange);
-        registry.addInterceptor(new CommonConfigurationInterceptor());
+        registry.addInterceptor(commonInterceptor);
     }
 
     @Bean

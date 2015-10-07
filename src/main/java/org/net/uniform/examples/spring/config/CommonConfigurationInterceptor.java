@@ -19,14 +19,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.uniform.api.TranslationEngineContext;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 /**
  *
  * @author Eduardo Ramos
  */
+@Component
 public class CommonConfigurationInterceptor extends HandlerInterceptorAdapter {
-
+    
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         //Set uniform's current user ThreadLocal locale from spring locale
