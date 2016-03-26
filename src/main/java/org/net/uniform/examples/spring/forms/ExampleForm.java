@@ -25,7 +25,7 @@ import org.net.uniform.examples.spring.common.forms.UIkitForm;
  *
  * @author Eduardo Ramos<eduramiba@gmail.com>
  */
-public class ExampleForm extends UIkitForm {
+public final class ExampleForm extends UIkitForm {
 
     public ExampleForm() {
         super();
@@ -37,14 +37,10 @@ public class ExampleForm extends UIkitForm {
         this.addElement(header);
         
         //Start grid
-        this.startDecorator("grid", new HTMLTagDecorator("div", new HashMap<String, Object>(){{
-            put("class", "uk-grid");
-        }}));
+        this.startDecorator("grid", new HTMLTagDecorator("div").setProperty("class", "uk-grid"));
 
         //Start column 1
-        this.startDecorator("col1", new HTMLTagDecorator("div", new HashMap<String, Object>(){{
-            put("class", "uk-width-1-2");
-        }}));
+        this.startDecorator("col1", new HTMLTagDecorator("div").setProperty("class", "uk-width-1-2"));
         
         //Input
         Input input = new Input("input");
@@ -115,9 +111,7 @@ public class ExampleForm extends UIkitForm {
         this.endDecorator();//End column 1
         
         //Start column 2
-        this.startDecorator("col2", new HTMLTagDecorator("div", new HashMap<String, Object>(){{
-            put("class", "uk-width-1-2");
-        }}));
+        this.startDecorator("col2", new HTMLTagDecorator("div").setProperty("class", "uk-width-1-2"));
         
         DatePicker datePicker = new DatePicker("date");
         datePicker.setLabel("Some date (optional)");

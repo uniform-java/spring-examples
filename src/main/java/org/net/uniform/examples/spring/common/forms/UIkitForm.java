@@ -31,18 +31,10 @@ public class UIkitForm extends HTMLForm {
     protected void setupDefaultDecorators() {
         addDefaultDecoratorForElementClass(Element.class, new UIkitErrorsDecorator());
 
-        addDefaultDecoratorForElementClass(Element.class, new HTMLTagDecorator("div", new HashMap<String, Object>() {
-            {
-                put("class", "uk-form-controls");
-            }
-        }));
+        addDefaultDecoratorForElementClass(Element.class, new HTMLTagDecorator("div").setProperty("class", "uk-form-controls"));
         addDefaultDecoratorForElementClass(Element.class, new LabelDecorator("uk-form-label"));
         addDefaultDecoratorForElementClass(Element.class, new ElementErrorsDecorator("uk-text-danger"));
-        addDefaultDecoratorForElementClass(Element.class, new HTMLTagDecorator("div", new HashMap<String, Object>() {
-            {
-                put("class", "uk-form-row");
-            }
-        }));
+        addDefaultDecoratorForElementClass(Element.class, new HTMLTagDecorator("div").setProperty("class", "uk-form-row"));
     }
 
 }
